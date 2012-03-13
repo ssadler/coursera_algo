@@ -1,4 +1,4 @@
-
+module Merge where
 
 other :: [a] -> [a]
 other [] = []

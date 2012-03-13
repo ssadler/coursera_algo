@@ -21,6 +21,8 @@ def mergesort(arr):
         if left[0] < right[0]:
             out.append(left.pop(0))
         else:
+            # inversions counts the number of places a number must
+            # be moved relative to every other number
             inversions += len(left)
             out.append(right.pop(0))
 
