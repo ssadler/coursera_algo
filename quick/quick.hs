@@ -1,5 +1,8 @@
 import Data.List
 
+atHalf xs = xs !! (round $ realToFrac (length xs) / 2)
+
+
 pivot :: Ord a => a -> [a] -> [a] -> [a] -> [a]
 pivot n [] xs ys = quicksort xs ++ quicksort ys
 pivot n (x:xs) ys zs = if (x < n)
@@ -10,4 +13,4 @@ pivot n (x:xs) ys zs = if (x < n)
 quicksort :: Ord a => [a] -> [a]
 quicksort [] = []
 quicksort [x] = [x]
-quicksort xs = pivot (xs !! round (realToFrac (length xs) / 2)) xs [] []
+quicksort xs = pivot (atHalf xs) xs [] []
